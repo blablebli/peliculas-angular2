@@ -43,7 +43,7 @@ groups=[
      {
        "name": "rubbers",
        "items": "big rubber"
-     },
+     }
   ];
 
 groups0=[

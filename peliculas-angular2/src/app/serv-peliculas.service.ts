@@ -26,7 +26,7 @@ export class ServPeliculasService {
      {
        "name": "rubbers",
        "items": "big rubber"
-     },
+     }
   ];
   }
   
