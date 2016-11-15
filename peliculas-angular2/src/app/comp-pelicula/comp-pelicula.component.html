@@ -1,0 +1,93 @@
+<p>
+  comp-pelicula works!
+</p>
+<form #form="ngForm" (ngSubmit)="enviarFormulario(form.value)" >     
+  <label>Tipo text: titulo</label>
+  <!--
+  <input type="text" #titulo="ngModel" name="titulo" [(ngModel)]="pelicula.titulo" required/>
+
+
+  <br/>
+  <div [hidden]="titulo.valid || titulo.pristine">Titulo requerido</div>
+    -->
+  <br/>
+   <label>Tipo text: director</label>
+    <!--
+  <input type="text" #director="ngModel" name="director" [(ngModel)]="pelicula.director" required/>
+  -->
+  <br/>
+   <label>Tipo text: sinopsis</label>
+    <!--
+  <input type="text" #sinopsis="ngModel" name="sinopsis" [(ngModel)]="pelicula.sinopsis" required/>
+
+  -->
+  <br/>
+   <label>Tipo text: fecha</label>
+    <!--
+  <input type="text" #fecha="ngModel" name="fecha" [(ngModel)]="pelicula.titulo" required/>
+
+  -->
+  <br/>
+  <button type="submit" [disabled]="form.invalid">Enviar</button>
+</form>
+
+<table>
+<tr> 
+   <td> Pelicula </td> <td>Director</td><td>Sinopsis</td><td>Fecha</td>
+</tr>
+<tr> 
+   <td> Pelicula1 </td> <td>Director1</td><td>Sinopsis1</td><td>20100105</td>
+</tr>
+<tr> 
+   <td> Pelicula2 </td> <td>Director2</td><td>Sinopsis2</td><td>20120101</td>
+</tr>
+<tr> 
+   <td> Pelicula3 </td> <td>Director3</td><td>Sinopsis3</td><td>20030103</td>
+</tr>
+<tr> 
+   <td> Pelicula4 </td> <td>Director4</td><td>Sinopsis4</td><td>20090108</td>
+</tr>
+</table>
+
+<table id="spreadsheet" border="1">
+    <tr *ngFor="let row of groups">
+        <td class="row-number-column">{{row.rowIndex}}</td>
+        <!--<td *ngFor="let col of row.columns">
+            <input  data-id="{{col.rowIndex}}-{{col.columnIndex}}" 
+                   [value]="col.cellValue" (input)="col.cellValue = $event.target.value" 
+                  (click)="model.selectColumn(col)" 
+                  (keyup)="navigate($event)" />
+        </td>-->
+    </tr>
+</table>
+
+<table>
+  <template let-group ngFor [ngForOf]="groups0">
+    <tr *ngFor="let row of group.items">{{row}}</tr>
+  </template>
+</table>
+<br>
+<table>  
+    <tr *ngFor="let row1 of groups">
+      <td>{{row1.name}}</td><td>{{row1.items}}</td>
+    </tr>
+</table>
+<br>
+mitabla del servicio
+<br>
+<table border="1">  
+    <tr *ngFor="let row1 of groupsService">
+      <td>{{row1.name}}</td><td>{{row1.items}}</td>
+    </tr>
+</table>
+
+<!--
+<table ng-controller="myCtrl" border="1">
+    <tr ng-repeat="x in groups">
+        <td>{{x.name}}</td>
+     
+    </tr>
+</table>
+
+-->
+
